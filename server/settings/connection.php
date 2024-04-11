@@ -1,6 +1,6 @@
 <?php
 // Use mysqli connection method
-$connection = new mysqli('localhost', 'root', "", 'greenhouse');
+$connection = new mysqli('localhost', 'root', "", 'greenHouse');
 
 // Check if connection worked
 if ($connection->connect_error) {
@@ -13,6 +13,5 @@ if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
     exit();
 
-   
 }
 

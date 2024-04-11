@@ -10,5 +10,3 @@ function checkLogin(){
         return True;
     }
 }
-
-?>

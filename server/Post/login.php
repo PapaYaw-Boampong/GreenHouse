@@ -9,14 +9,16 @@ global $connection;
 // Initialize response array
 $response = array();
 
+
 // Check if login button was clicked
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
     // Collect form data and store in variables
     $email = $connection->real_escape_string($_POST['email']);
     $password = $connection->real_escape_string($_POST['password']);
 
     // Write a query to SELECT a record from the people table using the email
-    $query = "SELECT * FROM Users WHERE email = '$email'";
+    $query = "SELECT * FROM users WHERE email = '$email'";
 
     // Execute the query using the connection from the connection file
     $result = mysqli_query($connection, $query);
