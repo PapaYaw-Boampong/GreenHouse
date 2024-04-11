@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     if(isset($_GET['plant_id'])){
         // Prepare SQL statement to select plant care information by user ID
     $sql = "SELECT activity_id, activity_name, custom
-    FROM care_activities
+    FROM Care_activities
     WHERE custom IS NULL OR custom = ?;
     ";
 

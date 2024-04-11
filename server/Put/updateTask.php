@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $schedule = $_POST['task-sch'];
 
         // Prepare the SQL statement to update the task
-        $sql = "UPDATE tasks SET schedule_id = ? WHERE task_id = ?";
+        $sql = "UPDATE Tasks SET schedule_id = ? WHERE task_id = ?";
 
         // Prepare the statement
         $stmt = $connection->prepare($sql);

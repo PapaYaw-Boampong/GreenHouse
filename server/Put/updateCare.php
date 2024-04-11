@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
     // Prepare the UPDATE statement
-    $query = "UPDATE care_activities SET activity_name=?, description=?  WHERE activity_id=?";
+    $query = "UPDATE Care_activities SET activity_name=?, description=?  WHERE activity_id=?";
 
     // Prepare the statement
     $stmt = $connection->prepare($query);
