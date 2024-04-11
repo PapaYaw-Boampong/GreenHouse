@@ -60,7 +60,7 @@
                                 FirstName:
                             </span>
                             <div class="value" id="fname">
-                                gfgf
+                                
                             </div>
 
                         </div>
@@ -70,7 +70,7 @@
                                 FastName:
                             </span>
                             <div class="value" id="lname">
-                                gfgs
+                                
                             </div>
 
                         </div>
@@ -80,7 +80,7 @@
                                 Gender:
                             </span>
                             <div class="value" id="gender">
-                                gff
+                                
                             </div>
 
                         </div>
@@ -94,7 +94,7 @@
                                 UserName:
                             </span>
                             <div class="value" id="user">
-                                fddafdf
+                                
                             </div>
 
                         </div>
@@ -104,7 +104,7 @@
                                 Email:
                             </span>
                             <div class="value" id="email">
-                                dfadfdaf
+                                
                             </div>
 
                         </div>
@@ -114,7 +114,7 @@
                                 Phone number:
                             </span>
                             <div class="value" id="phone">
-                                fsdadsg
+                                
                             </div>
 
                         </div>

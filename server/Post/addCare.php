@@ -1,12 +1,13 @@
 <?php
+// Initialize response array
+$response = array();
+
 // Include the connection file
 include '../settings/connection.php';
 include '../settings/core.php';
 
 global $connection;
 
-// Initialize response array
-$response = array();
 
 // Check if user is logged in
 if (!checkLogin()) {
@@ -44,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $response['message'] = "Duplicate record exists.";
     } else {
         // If no duplicate exists, prepare the INSERT statement
-        $query = "INSERT INTO Plant_Care (activity_id, plant_id) VALUES (?, ?)";
+        $query = "INSERT INTO plant_care (activity_id, plant_id) VALUES (?, ?)";
 
         // Prepare the statement
         $stmt = $connection->prepare($query);

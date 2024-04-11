@@ -100,3 +100,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 // Encode the response array as JSON and echo it
 echo json_encode($response);
+?>

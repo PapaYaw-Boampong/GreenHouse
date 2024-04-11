@@ -3,6 +3,7 @@
 include '../settings/connection.php';
 include '../settings/core.php';
 
+$response = array();
 global $connection;
 
 

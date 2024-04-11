@@ -1,10 +1,12 @@
 <?php
+
+// Initialize response array
+$response = array();
 // Include the connection file
 include '../settings/connection.php';
 include '../settings/core.php';
 
-// Initialize response array
-$response = array();
+
 
 // Check if user is logged in
 if (!checkLogin()) {

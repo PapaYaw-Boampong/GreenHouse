@@ -3,6 +3,9 @@
 include '../settings/connection.php';
 include '../settings/core.php';
 
+// Initialize the response array
+$response = array();
+
 // Check if the user is logged in
 if (!checkLogin()) {
     $response['success'] = false;
@@ -13,8 +16,7 @@ if (!checkLogin()) {
     exit;
 }
 
-// Initialize the response array
-$response = array();
+
 
 // Check if the request method is GET
 if ($_SERVER["REQUEST_METHOD"] === "GET") {

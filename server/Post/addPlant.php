@@ -1,8 +1,12 @@
 <?php
+// Initialize response array
+$response = array();
 // Include the connection file
 include '../settings/connection.php';
 include '../settings/core.php';
 
+// Initialize response array
+$response = array();
 
 if (!checkLogin()) {
     $response['success'] = false;
@@ -12,14 +16,14 @@ if (!checkLogin()) {
 
 global $connection;
 
-// Initialize response array
-$response = array();
+
 
 // Check if JSON data was sent in the request
 $jsonData = json_decode(file_get_contents("php://input"), true);
 
 // Check if JSON data is not empty
 if (!empty($jsonData)) {
+    
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Collect JSON data and store in variables
         $plantName = $jsonData['plantName'];
@@ -28,7 +32,7 @@ if (!empty($jsonData)) {
         $plantNotes = $jsonData['plantNotes'];
 
         // Prepare INSERT statement
-        $query = "INSERT INTO plants (user_id, name, species, description, personal_notes) VALUES (?, ?, ?, ?, ?)";
+        $query = "INSERT INTO Plants (user_id, name, species, description, personal_notes) VALUES (?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($connection, $query);
 
         // Bind parameters to prepared statement
@@ -63,3 +67,4 @@ mysqli_close($connection);
 
 // Encode the response array as JSON and echo it
 echo json_encode($response);
+?>

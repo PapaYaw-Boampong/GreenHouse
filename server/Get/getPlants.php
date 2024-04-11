@@ -68,3 +68,4 @@ $connection->close();
 // Encode the response array as JSON and echo it
 echo json_encode($response);
 ?>
+?>
