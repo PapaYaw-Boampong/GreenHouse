@@ -56,13 +56,13 @@ function validateForm() {
     return { isValid: true, message: '' };
 }
 
+
+
 document.getElementById("register-form").addEventListener("submit", function(event) {
-    
     event.preventDefault(); // Prevent form submission
     var validationResult = validateForm();
 
     if (!validationResult.isValid) {
-        
         swal({
             title: 'Error',
             text: validationResult.message,
@@ -91,7 +91,21 @@ document.getElementById("register-form").addEventListener("submit", function(eve
                 }
             });
         } else {
-            // Registration failed, handle errors if needed
+            // Registration failed, check if email already exists
+            return response.json(); // Parse response body as JSON
+        }
+    })
+    .then(data => {
+        if (data.success === false && data.message === "Email already exists.") {
+            // Handle duplicate email case
+            swal({
+                title: 'Error!',
+                text: 'Email already exists. Please use a different email address.',
+                icon: 'error',
+                button: 'OK'
+            });
+        } else {
+            // Handle other registration errors
             swal({
                 title: 'Error!',
                 text: 'Registration failed. Please try again later.',
@@ -105,12 +119,13 @@ document.getElementById("register-form").addEventListener("submit", function(eve
         // Handle any unexpected errors if needed
         swal({
             title: 'Error!',
-            text: 'An unexpected Server error occurred. \n Please try again later.',
+            text: 'An unexpected server error occurred. Please try again later.',
             icon: 'error',
             confirmButtonText: 'OK'
         });
     });
 });
+
 
 
 

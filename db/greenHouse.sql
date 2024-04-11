@@ -5,7 +5,7 @@ USE greenHouse;
 -- Create Users table
 CREATE TABLE IF NOT EXISTS Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) UNIQUE,
+    username VARCHAR(50),
     email VARCHAR(100) UNIQUE,
     password_hash VARCHAR(255),
     fname VARCHAR(50),

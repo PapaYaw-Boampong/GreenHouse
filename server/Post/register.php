@@ -7,7 +7,6 @@ $response = array();
 
 global $connection;
 
-
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -21,37 +20,47 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $pnum = $connection->real_escape_string($_POST['pnum']);
     $username = $connection->real_escape_string($_POST['username']);
 
+    // Check if email already exists
+    $query_check_email = "SELECT COUNT(*) AS email_count FROM Users WHERE email = ?";
+    $stmt_check_email = $connection->prepare($query_check_email);
+    $stmt_check_email->bind_param("s", $email);
+    $stmt_check_email->execute();
+    $result_check_email = $stmt_check_email->get_result();
+    $row_email = $result_check_email->fetch_assoc();
 
-    // Encrypt the password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-    // Prepare the INSERT statement
-    $query = "INSERT INTO Users (username, email, password_hash, fname, lname, dob, gender, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-
-    // Prepare the statement
-    $stmt = $connection->prepare($query);
-
-    // Bind parameters
-    $stmt->bind_param("ssssssis", $username, $email, $hashed_password, $firstname, $lastname,$dob, $gender, $pnum, );
-
-
-    // Execute the query using the connection from the connection file
-    if ($stmt->execute()) {
-
-        $response['success'] = true;
-        $response['message'] = "Register Successfull";
-    } else {
-
+    if ($row_email['email_count'] > 0) {
+        // Email already exists, return appropriate response
         $response['success'] = false;
-        $response['message'] = "Cannot Register User at the moment.";
+        $response['message'] = "Email already exists.";
+    } else {
+        // Email does not exist, proceed with registration
+
+        // Encrypt the password
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        // Prepare the INSERT statement
+        $query_insert_user = "INSERT INTO Users (username, email, password_hash, fname, lname, dob, gender, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt_insert_user = $connection->prepare($query_insert_user);
+        $stmt_insert_user->bind_param("ssssssis", $username, $email, $hashed_password, $firstname, $lastname, $dob, $gender, $pnum);
+
+        // Execute the INSERT query
+        if ($stmt_insert_user->execute()) {
+            $response['success'] = true;
+            $response['message'] = "Registration successful.";
+        } else {
+            $response['success'] = false;
+            $response['message'] = "Cannot register user at the moment.";
+        }
     }
 } else {
-    // Redirect to register_view page if form is not submitted
+    // Form not submitted
     $response['success'] = false;
     $response['message'] = "Cannot process. " . $_SERVER["REQUEST_METHOD"];
 }
 
-echo json_encode($response);
-
+// Close the database connection
 mysqli_close($connection);
+
+// Output JSON response
+echo json_encode($response);
 ?>
