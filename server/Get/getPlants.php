@@ -1,22 +1,19 @@
 <?php
-// Initialize response array
-$response = array();
-
- // Initialize array to store plants
- $plants = array();
- 
-// Include the connection file
 include '../settings/connection.php';
 include '../settings/core.php';
+
+$response = array();
+
+$plants = array();
+ 
 
 global $connection;
 
 if (!checkLogin()){
     $response['success'] = false;
     $response['message'] = "Restricted access.";
-    
     echo json_encode($response);
-    exit;
+    exit();
 }
 
 // Check if the request method is GET
@@ -67,5 +64,4 @@ $connection->close();
 
 // Encode the response array as JSON and echo it
 echo json_encode($response);
-?>
 ?>

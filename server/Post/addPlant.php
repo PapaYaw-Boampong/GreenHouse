@@ -16,8 +16,6 @@ if (!checkLogin()) {
 
 global $connection;
 
-
-
 // Check if JSON data was sent in the request
 $jsonData = json_decode(file_get_contents("php://input"), true);
 
