@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $response['message'] = "Duplicate record exists.";
     } else {
         // If no duplicate exists, prepare the INSERT statement
-        $query = "INSERT INTO plant_care (activity_id, plant_id) VALUES (?, ?)";
+        $query = "INSERT INTO Plant_Care (activity_id, plant_id) VALUES (?, ?)";
 
         // Prepare the statement
         $stmt = $connection->prepare($query);

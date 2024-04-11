@@ -332,7 +332,7 @@
 
         <div class="col" id="col-1">
           <div class="section" id="plantcare-name">
-            <label for="pc-name">Plant Care:</label>
+            <label for="pc-name">Plant Care: </label>
             <select name="pc-name" id="plant-care"></select>
           </div>
 

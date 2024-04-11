@@ -61,7 +61,12 @@ function populateAddTaskCare() {
       if (data.success) {
         const plantCareSelect = document.getElementById('plant-care');
         plantCareSelect.innerHTML ="";
+      
         // Loop through the plant care information and create options
+        if(data.plantCare.length == 0){
+          plantCareSelect.innerHTML+=`  <option disabled selected value="">Select an option</option>`;
+
+        }
         data.plantCare.forEach(care => {
           const option = document.createElement('option');
           option.value = care.activity_id;
