@@ -1,9 +1,5 @@
-
-
-
-
 document.getElementById("login-form").addEventListener("submit", function (event) {
-    
+
     event.preventDefault(); // Prevent form submission
 
     // Get form data
@@ -54,8 +50,7 @@ document.getElementById("login-form").addEventListener("submit", function (event
     fetch('../../server/Post/login.php', {
         method: 'POST',
         body: new FormData(document.getElementById('login-form'))
-    })
-        .then(response => {
+    }).then(response => {
             if (response.ok) {
                 return response.json();
 

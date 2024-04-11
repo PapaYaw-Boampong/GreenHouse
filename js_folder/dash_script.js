@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-
 // Selecting sidebar list items
 var sidebarItems = document.querySelectorAll('.sidebar-list-item');
 if (sidebarItems) {
@@ -225,7 +224,7 @@ function loadEditInfo(event) {
       // Check if the request was successful
       if (data.success) {
         const scheduleSelect = document.getElementById('editTasksch');
-        scheduleSelect.innerHTML ="";
+        scheduleSelect.innerHTML = "";
         // Loop through the plant care information and create options
         data.schedules.forEach(sch => {
           const option = document.createElement('option');
@@ -335,10 +334,10 @@ function buildTable2(data, currentDate) {
         </div>
     `;
 
-    const tableContents = document.createElement('div')
-    tableContents.classList.add('tablecontents');
-    tableContainer.appendChild(tableContents);
-  
+  const tableContents = document.createElement('div')
+  tableContents.classList.add('tablecontents');
+  tableContainer.appendChild(tableContents);
+
   if (data.length === 0) {
     const noDataMessage = document.createElement('div');
 
@@ -624,7 +623,7 @@ function renderPlantStreak(totalCompletionCounts, totalOverall) {
 }
 
 // Updating next due and completion statuses
-function updatehistory(plant_Id){
+function updatehistory(plant_Id) {
   fetch('../../server/Put/updateHistory.php', {
     method: 'POST',
     body: JSON.stringify({ plant_Id: plant_Id }),
@@ -716,7 +715,7 @@ function updateStatus(statusElement, isChecked, toggleid) {
                 // Show success message
                 swal(
                   'Deleted!',
-                  'I loving the momentum ' ,
+                  'I loving the momentum ',
                   'success'
                 ).then(() => {
                   // Refresh the page to reflect the changes
@@ -828,16 +827,16 @@ document.addEventListener("DOMContentLoaded", function () {
               localStorage.removeItem('sessionID');
               localStorage.removeItem('mode');
               // Redirect to another page after success if needed
-              window.history.replaceState({}, '', 'http://localhost/final-project/views/Login/login_view.php');
+              window.history.replaceState({}, '', 'http://51.11.183.36/GreenHouse/views/Login/login_view.php');
 
               // Clear history stack
               var len = window.history.length;
               for (var i = 0; i < len; i++) {
-                window.history.replaceState({}, '', 'http://localhost/final-project/views/Login/login_view.php');
+                window.history.replaceState({}, '', 'http://51.11.183.36/GreenHouse/views/Login/login_view.php');
               }
 
               // Redirect to login page
-              window.location.href = "http://localhost/final-project/views/Login/login_view.php";
+              window.location.href = "http://51.11.183.36/GreenHouse/views/Login/login_view.php";
             }
           });
         } else {

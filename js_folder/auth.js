@@ -4,15 +4,15 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = '../Login/login_view.php';
 
         // Redirect to another page after success if needed
-        window.history.replaceState({}, '', 'http://localhost/final-project/views/Login/login_view.php');
+        window.history.replaceState({}, '', 'http://51.11.183.36/GreenHouse/views/Login/login_view.php');
 
         // Clear history stack
         var len = window.history.length;
         for (var i = 0; i < len; i++) {
-          window.history.replaceState({}, '', 'http://localhost/final-project/views/Login/login_view.php');
+          window.history.replaceState({}, '', 'http://51.11.183.36/GreenHouse/views/Login/login_view.php');
         }
 
         // Redirect to login page
-        window.location.href = "http://localhost/final-project/views/Login/login_view.php";
+        window.location.href = "http://51.11.183.36/GreenHouse/views/Login/login_view.php";
     }
 });
