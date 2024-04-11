@@ -10,19 +10,19 @@ global $connection;
 $response = array();
 
 // Check if login button was clicked
-
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Collect form data and store in variables
     $email = $connection->real_escape_string($_POST['email']);
     $password = $connection->real_escape_string($_POST['password']);
 
     // Write a query to SELECT a record from the people table using the email
-    $query = "SELECT * FROM users WHERE email = '$email'";
+    $query = "SELECT * FROM Users WHERE email = '$email'";
 
     // Execute the query using the connection from the connection file
     $result = mysqli_query($connection, $query);
 
     // Check if any row was returned
-    if (mysqli_num_rows($result) == 0) {
+    if (mysqli_num_rows($result) === 0) {
         // If no record found provide appropriate response
         $response['success'] = false;
         $response['message'] = "User not found.";
@@ -50,7 +50,11 @@ $response = array();
     
         }
     }
-
+} else {
+    // If login button was not clicked, provide appropriate message or redirection
+    $response['success'] = false;
+    $response['message'] = "Invalid request. cannot process ". $_SERVER['REQUEST_METHOD'];
+}
 
 // Close the connection
 mysqli_close($connection);
