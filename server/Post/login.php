@@ -10,7 +10,7 @@ global $connection;
 $response = array();
 
 // Check if login button was clicked
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     // Collect form data and store in variables
     $email = $connection->real_escape_string($_POST['email']);
     $password = $connection->real_escape_string($_POST['password']);
@@ -50,11 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
         }
     }
-} else {
-    // If login button was not clicked, provide appropriate message or redirection
-    $response['success'] = false;
-    $response['message'] = "Invalid request. cannot process ". $_SERVER['REQUEST_METHOD'];
-}
+
 
 // Close the connection
 mysqli_close($connection);
