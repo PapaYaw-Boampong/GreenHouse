@@ -8,4 +8,3 @@ function checkLogin(){
         return True;
     }
 }
-?>
