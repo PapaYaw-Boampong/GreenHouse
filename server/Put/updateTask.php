@@ -1,4 +1,10 @@
 <?php
+// Enable error reporting
+error_reporting(E_ALL);
+
+// Display errors
+ini_set('display_errors', 1);
+
 // Include the connection file
 include '../settings/connection.php';
 include '../settings/core.php';
