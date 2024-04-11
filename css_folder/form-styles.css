@@ -1,0 +1,159 @@
+body {
+   font-family: 'Arial', sans-serif;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+   background-color: var(--app-bg);
+   background-size: cover;
+}
+
+.register-link, .login-link {
+   color: black; 
+   text-decoration: none;
+   font-size: smaller;   
+}
+
+.register-link{
+   margin-left: 20pt;
+}
+
+.login-link{
+   margin-left: 20pt;
+}
+
+.container{
+   margin-bottom: 70pt;
+   align-items: center;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+}
+
+#loginContainer{
+   justify-content: flex-start;
+   height: 60%;
+   width: 30%;
+   align-items: center;
+}
+
+#login{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   min-height: 350px;
+   min-width: 75%;
+}
+
+
+#login-form {
+   padding-top: 4%;
+   min-width: 80%;
+   min-height: 80%;
+   margin: 12pt;
+}
+
+
+
+.page-title > h1{
+   color: var(--sidebar-main-color);
+   padding-top: 0;
+}
+
+.page-title {
+   padding-top: 0;
+}
+
+
+#login, #register, #assignment {
+   box-shadow: 0 0 10px rgba(254, 251, 251, 0.875);
+   border-radius: 30px;
+   padding: 5pt;
+   background-color: white;
+}
+
+.row{
+   display: flex;
+}
+
+.col{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+#col-3{
+   padding-left: 35pt;
+}
+#col-1{
+   padding-right: 35pt;
+}
+
+#register{
+   padding-left: 20pt;
+}
+
+
+
+#register-form {
+   min-width: 500px;
+   padding: 20pt;
+}
+
+label {
+   color: var(--sidebar-main-color);
+   display: block;
+   font-weight: bold;
+}
+
+input ,select{
+   width: 100%;
+   padding: 15px;
+   margin-top: 15px;
+   margin-bottom: 18px;
+   box-sizing: border-box;
+   border-radius: 10px;
+}
+
+.options{
+   display: flex;
+   padding-top: 20pt;
+   padding-bottom: 20pt;
+}
+
+input[type="radio"]{
+   padding: 0;
+   margin: 0;
+}
+
+select{
+   size: 15pt;
+   font-weight: bold;
+}
+
+button{
+   width: 100%;
+   padding: 10px;
+   background-color: var(--sidebar-active-link);
+   color: #fff;
+   font-size: larger;
+   border: none;
+   border-radius: 10px;
+   cursor: pointer;
+   margin-top: 5pt;
+}
+button:hover{
+   background-color: var(--sidebar);
+}
+
+#register-button{
+   margin-top: 20pt;
+   width: 40%;
+}
+
+.hidden{
+   display: none;
+}
+ 

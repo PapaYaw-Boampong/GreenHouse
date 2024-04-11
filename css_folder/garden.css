@@ -1,0 +1,58 @@
+.gardenContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    
+}
+
+.app-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.plant{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 15%;
+    height: 200px;
+    width: 200px;
+    margin: 40px;
+    margin-bottom: 20px;
+    border: 2px solid var(--sidebar-active-link);
+    flex-direction: column;
+}
+
+
+.plant:hover {
+    box-shadow: 0 0 10px var(--sidebar-active-link); /* Light green shadow on hover */
+}
+
+.garden{
+    box-shadow: 0 0 15px var(--sidebar-active-link); /* Light green shadow on hover */
+    height: 85%;
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+     background-color: rgba(255, 255, 255, 0.87); /* Adjust the last value (0.5) to change opacity */
+     background-image: url('../assets/gardenbg2.jpg');
+     background-blend-mode: overlay;
+     background-size: cover;
+     border-radius: 20px;
+    
+}
+
+
+.garden::-webkit-scrollbar {
+    display: none;
+}
+
+
+.popup-region.popup#add-plant.row {
+    flex-direction: row;
+}

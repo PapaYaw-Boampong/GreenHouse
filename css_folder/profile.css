@@ -1,0 +1,56 @@
+.userData{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+
+}
+.dataContainer{
+    box-shadow: 0 0 15px var(--sidebar-active-link); /* Light green shadow on hover */
+    height: 85%;
+    width: 80%;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    border-radius: 40px;
+    padding: 25px;
+    color: white;
+    background-color: var(--app-content-main-color);
+    padding: 10px;
+    font-size: 26px;
+    font-weight: bold;
+    min-height: 550px;
+    margin: 20px;
+}
+
+.dataContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.col{
+    min-width: 28%;
+}
+
+.value{
+    margin-left: 10px;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+
+}
+.section{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 30%;
+
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.section:hover{
+    border: solid 2px white;
+}
+

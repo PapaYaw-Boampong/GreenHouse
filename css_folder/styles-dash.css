@@ -1,0 +1,412 @@
+.sidebar {
+  flex-basis: 200px;
+  max-width: 210px;
+  flex-shrink: 0;
+  background-color: var(--sidebar);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  padding-bottom: 20%;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#app-icon-title{
+  color: var(--headercol);
+}
+
+.sidebar-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-list-item {
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.sidebar-list-item a {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 16px;
+  color: var(--sidebar-link);
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 24px;
+}
+.sidebar-list-item svg {
+  margin-right: 8px;
+}
+.sidebar-list-item:hover {
+  background-color: var(--sidebar-hover-link);
+}
+.sidebar-list-item.active {
+  background-color: var(--sidebar-active-link);
+}
+.sidebar-list-item.active:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  background-color: var(--action-color);
+  height: 100%;
+  width: 4px;
+}
+
+@media screen and (max-width: 960px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+.app-icon {
+  color: var(--sidebar-main-color);
+}
+.app-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.headerAction{
+  display: flex;
+  justify-content: space-between
+} 
+
+
+.stat-container{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  min-width: 390px;
+}
+
+.stats{
+  display: flex;
+  width: 70%;
+  overflow-x: scroll;
+  justify-content:space-between;
+}
+
+.stat{
+  display: inline-block;
+  min-height: 100%;
+  margin: 15pt ;
+  min-width: 220px;
+
+}
+
+.stats::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
+}
+
+.state-tag{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.state-num{
+  color: #fff;
+
+  display: flex;
+}
+.state-tag > span{
+  padding-left: 7pt;
+  margin-bottom: 10pt;
+}
+.state-tag > .icon{
+  margin-top: 2pt;
+}
+.state-container{
+  background-color: var(--app-content-main-color);
+  border-radius: 20px;
+  height: 170px;
+  width: 180px;
+  padding: 30px;
+  margin: 10;
+}
+
+.state-container:hover{
+  box-shadow: 12px 0 10px rgba(187, 227, 191, 0.5);
+}
+
+
+.plantData{
+  display: flex;
+  margin-top: 2%;
+  max-height: 220px;
+  margin-bottom: 40px;
+}
+
+.plantInfo{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--app-content-main-color);
+  border-radius: 20px;
+  color: white;
+  background-color: var(--app-content-main-color);
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  height: 100%;
+
+}
+.plantInfo:hover{
+  box-shadow: 0 0 10px var(--sidebar-active-link);
+}
+
+.row{
+  display: flex;
+  padding: 10px;
+}
+
+.info-sec {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.info-sec:hover{
+  box-shadow: 0 0 10px rgba(253, 253, 253, 0.778);
+}
+
+#infosec2{
+  margin-left: 30px;
+  min-width: 65%;
+  
+}
+
+.row.plantInfo{
+  background-color: #c405b4;
+}
+
+.value{
+  overflow-wrap: break-word; /* Standard syntax */
+    word-wrap: break-word; /* Non-standard syntax for older browsers */
+    word-break: break-all; /* Break words at any character */
+    max-width: 500px; /* Set maximum width to prevent excessively long lines */
+}
+
+#infosec1{
+  min-width: 25%;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+#sec2, #sec4{
+  margin-left: 30px;
+}
+
+#sec1, #sec3{
+  width: 35%;
+}
+
+#sec2{
+  margin-right: 10px;
+}
+
+
+.table-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--app-content-main-color);
+  margin-bottom: 5pt;
+  border-radius: 10pt;
+  font-size: 14pt;
+  font-weight: bolder;
+}
+
+
+a{
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color:var(--app-content-main-color);;
+}
+
+.state-tag > span {
+  color: #fff;/* Your styles here */
+}
+
+@media screen and (max-width: 768px) {
+  .statuses {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px; /* Adjust margin as needed */
+    height: auto; /* Remove fixed height to allow flexibility */
+  }
+
+  .state-container {
+    margin-bottom: 20px; /* Add margin between status tabs */
+  }
+  .app-content-header{
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+}
+
+
+/* Table CSS */
+.tableView {
+  width: 100%;
+  max-height: 100%;
+  overflow: hidden ;
+  padding: 0 4px;
+}
+
+
+.products-header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 4px;
+  background-color: var( --table-header);
+  position: sticky;
+  border: solid 1px var(--bordercol);
+}
+
+
+.tableView .products-row {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  margin-top: 8pt;
+}
+.tableView .products-row:hover {
+  border: solid 1px var(--bordercol);
+}
+.tableView .product-cell {
+  flex: 1;
+  padding: 8px 16px;
+  color: var(--app-content-main-color);
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+@media screen and (max-width: 650px) {
+  .tableView{
+    display: none;
+  }
+ 
+}
+
+
+/* Event Status */
+.status {
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding:7.5px;
+  padding-left: 0;
+  font-size: 15px;
+}
+
+
+
+/* Switch Toggle */
+.toggle-switch input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-switch-background {
+  height: 21pt;
+  width: 50pt;
+  background-color: var(white );
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 2px #ccc;
+  transition: background-color 0.3s ease-in-out;
+  border: solid 2px var(--action-color);
+}
+.toggle-switch-handle {
+  top: 25pt;
+  left: 2pt;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+.toggle-switch::before {
+  content: "";
+  position: absolute;
+  top: -26px;
+  right: -35px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #aaa;
+  text-shadow: 1px 1px #fff;
+  transition: color 0.3s ease-in-out;
+}
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-handle {
+  transform: translateX(45px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 3px #05c46b;
+}
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-background {
+  background-color: #05c46b;
+  box-shadow: inset 0 0 0 2px #04b360;
+}
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch:before {
+  content: "On";
+  color: #05c46b;
+  right: -10px;
+}
+.toggle-switch input[type="checkbox"]:checked + .toggle-switch-background .toggle-switch-handle {
+  transform: translateX(40px);
+}
+
+
+.plantCare, .home, .taskManager{
+  overflow: hidden;
+  height: 100%;
+  padding: 5;
+  
+}
+
+.plantcaretable, .taskmanagertable, .homepagetable{
+  overflow: hidden;
+  min-height: 30%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.taskmanagertable{
+  margin-top: 85px;
+  min-height: 50%;
+}
+
+#hometablecontainer {
+  position: relative;
+  
+}
+
+.tablecontents{
+  height: 80%;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+
+
+.tablecontents::-webkit-scrollbar{
+  display: none;
+}

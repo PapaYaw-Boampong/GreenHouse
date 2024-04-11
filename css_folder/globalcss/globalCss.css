@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --app-bg: #fff;
+  --sidebar: #39a055;
+  --bordercol: #39a055;
+  --sidebar-main-color: #4fbb6a;
+  --action-btn:#4fbb6a;
+  --table-border: #1a2131;
+  --table-header: #1a2131
+  --table-row-hover: #79c08b; 
+  --app-content-main-color: #4fbb6a;
+  --sidebar-link: #fff;
+  --sidebar-active-link: #4fbb6a;
+  --sidebar-hover-link: #79c08b;
+  --action-color: #1f913b;
+  --action-color-hover: #4fbb6a;
+  --app-content-secondary-color: #1d283c;
+  --svgdefault:  #4fbb6a;
+  --sidesvg:  #fff;
+  --headercol:  #fff;
+  --statsvg: #fff;
+  
+}
+
+.light:root {
+  --app-bg: #fff;
+  --sidebar: #f3f6fd;
+  --bordercol:#1a2131;
+  --app-content-secondary-color: #f3f6fd;
+  --app-content-main-color: #1f1c2e;
+  --sidebar-link: #1f1c2e;
+  --sidebar-hover-link: rgba(195, 207, 244, 0.5);
+  --sidebar-active-link: rgba(195, 207, 244, 1);
+  --sidebar-main-color: #1f1c2e;
+  --filter-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --action-color: #1d283c;
+  --action-btn: #1d283c;
+  --svgdefault:   #1d283c;
+  --sidesvg: #1d283c;
+  --headercol: #1d283c;
+  --statsvg: #fff;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+body {
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--app-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  border-radius: 4px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  max-width: 2000px;
+  padding: 5pt;
+  overflow: hidden;
+}
+
+.action-btn{
+  border-radius: 20%;
+  border:none;
+  background-color: var(--app-bg);
+}
+.action-btn:hover{
+  border: solid 1px var(--sidebar);
+}
+
+.tableView.product-cell.action-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-content {
+  padding: 10px;
+  background-color: var(--app-bg);
+  flex: 1;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.app-content-header {
+  display: flex;
+  justify-content:space-between;
+  padding: 0 4px;
+ 
+}
+.app-content-headerText {
+  color: var( --bordercol);
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0;
+}
+.app-content-headerButton {
+  background-color: var(--action-color);
+  color: #fff;
+  font-size: 14px;
+  line-height: 24px;
+  border: none;
+  border-radius: 4px;
+  height: 32px;
+  padding: 0 16px;
+  transition: 0.2s;
+  cursor: pointer;
+  margin-left: 10px;
+  min-width: 150px;
+  white-space: nowrap;
+}
+.app-content-headerButton:hover {
+  background-color: var(--sidebar-hover-link);
+}
+.app-content-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 4px;
+  margin-bottom: 16px;
+}
+.app-content-actions-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+@media screen and (max-width: 520px) {
+  .app-content-actions {
+    flex-direction: column;
+  }
+  .app-content-actions .search-bar {
+    max-width: 100%;
+    order: 2;
+  }
+}
+
+
+
+.account-info-picture {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 20%;
+  border: white;
+  border-width: 10pt;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding-left: 0;
+}
+
+.account-info {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  margin-top: auto;
+}
+
+.account-info-name {
+  font-size: 14px;
+  color: var(--sidebar-main-color);
+  margin: 0 8px;
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account-info-more {
+  color: var(--sidebar-main-color);
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  margin-left: auto;
+}
+
+
+.account-info-picture svg{
+  stroke: var(--svgdefault);
+  fill:  var(--svgdefault);
+}
+
+.log.account-info-picture svg{
+  stroke: var(--svgdefault);
+  fill:  none;
+}
+
+.sidebar .account-info-picture svg{
+  stroke: var(--sidesvg);
+  fill:  none;
+}
+
+.action-buttons svg{
+  stroke: var(--svgdefault);
+}
+
+
+.sidebar-list svg{
+  stroke: var(--sidesvg);
+}
+
+.close-btn svg{
+  stroke: var(--sidesvg);
+}
+
+.plant svg{
+  stroke: var( --svgdefault);
+  fill: var( --svgdefault);
+}
+
+.stat svg{
+  stroke: var(--statsvg);
+}
+
+
+.mode-switch {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  color: var(--app-content-main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.mode-switch .moon {
+  fill: var(--app-content-main-color);
+}
+.mode-switch.active .moon {
+  fill: none;
+}
+
+
+.hidden{
+  display: none;
+}
+
+
