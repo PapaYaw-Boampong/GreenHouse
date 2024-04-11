@@ -73,54 +73,6 @@ function loadCareEditInfo(event) {
 document.getElementById('editPlantCare-form').addEventListener('submit', handleCareEditFormSubmission);
 
 
-// Function to handle edit form submission
-function handleEditFormSubmission(event) {
-  event.preventDefault();
-
-  // Get chore ID and updated chore name
-  var form = event.target;
-  var choreId = form.querySelector('input#old-chore').dataset.choreId;
-  var choreName = form.querySelector('input[name="choreName"]').value;
-
-  // Send AJAX request to update chore
-  var xhr = new XMLHttpRequest();
-
-  xhr.open('POST', '../../actions/edit_chore_action.php', true);
-  xhr.setRequestHeader('Content-Type', 'application/json');
-
-  xhr.onload = function () {
-    if (xhr.status >= 200 && xhr.status < 400) {
-      // Chore updated successfully
-      hidePopup();
-      setupCloseButtons()
-      swal({
-        title: 'Success!',
-        text: 'New Chore Added.',
-        icon: 'success',
-        button: 'OK'
-      }).then((value) => {
-        if (value) {
-          // Redirect to another page after success if needed
-
-        }
-      });
-    } else {
-      // Handle error
-      console.error('Failed to update chore');
-    }
-  };
-  xhr.onerror = function () {
-    // Handle error
-    console.error('Failed to update chore');
-  };
-  // Log the JSON payload before sending the request
-  var payload = JSON.stringify({ id: choreId, name: choreName });
-
-  xhr.send(payload); // Send the request with chore ID and name in JSON format
-
-
-
-}
 
 
 // function to handle task deletions

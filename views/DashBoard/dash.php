@@ -85,7 +85,7 @@
     <div class="app-content home <?php echo ($message === 'home' || $message === '') ? '' : 'hidden'; ?>">
 
       <div class="app-content-header ">
-        <h1 class="app-content-headerText"> Its me </h1>
+        <h1 class="app-content-headerText" id="plant-alias"> Its me </h1>
         <button class="mode-switch" title="Switch Theme">
           <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
             <defs></defs>

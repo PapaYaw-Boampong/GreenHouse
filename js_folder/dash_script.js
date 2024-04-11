@@ -69,18 +69,18 @@ function togglePages(event) {
   var clickedElement = event.target.closest('a');
 
   var homePage = document.querySelector('.home');
-  var manageChores = document.querySelector('.plantCare');
-  var assignchore = document.querySelector('.taskManager');
+  var manageCare = document.querySelector('.plantCare');
+  var assignTasks = document.querySelector('.taskManager');
 
   if (clickedElement) {
     if (homePage) {
       homePage.classList.toggle('hidden', clickedElement.textContent.trim() !== "Home");
     }
-    if (manageChores) {
-      manageChores.classList.toggle('hidden', clickedElement.textContent.trim() !== "Plant Care");
+    if (manageCare) {
+      manageCare.classList.toggle('hidden', clickedElement.textContent.trim() !== "Plant Care");
     }
-    if (assignchore) {
-      assignchore.classList.toggle('hidden', clickedElement.textContent.trim() !== "Tasks");
+    if (assignTasks) {
+      assignTasks.classList.toggle('hidden', clickedElement.textContent.trim() !== "Tasks");
     }
   }
 }
@@ -276,7 +276,7 @@ function handleTaskDeleteButtonClick(event) {
             // Show success message
             swal(
               'Deleted!',
-              'Your assignment has been deleted.',
+              'Task deleted.',
               'success'
             ).then(() => {
               // Refresh the page to reflect the changes
@@ -687,7 +687,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Status of Chore update
 function updateStatus(statusElement, isChecked, toggleid) {
   if (statusElement) {
     if (isChecked) {

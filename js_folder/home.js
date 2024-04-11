@@ -1,4 +1,3 @@
-
 function loadPlantInfo() {
   // Get the plant ID from wherever you have it
   var plantId = localStorage.getItem("selectedPlantId");
@@ -13,6 +12,7 @@ function loadPlantInfo() {
       var response = JSON.parse(xhr.responseText);
       if (response.plants.length > 0) {
         response = response.plants[0];
+        document.getElementById('plant-alias').textContent = " Hi, ... Im "+ response.name;;
 
 
         // Render the plant information in the infosec2 div
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
               // Show success message
               swal(
                 'Deleted!',
-                'Your assignment has been deleted.',
+                'Plant deleted.',
                 'success'
               ).then(() => {
 
