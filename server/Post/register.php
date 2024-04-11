@@ -53,5 +53,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 echo json_encode($response);
 
-// Close the connection
 mysqli_close($connection);
+?>

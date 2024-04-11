@@ -17,7 +17,6 @@ if (!checkLogin()) {
 }
 
 
-
 // Check if the request method is GET
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
     // Perform the SQL query to retrieve the data from the tables

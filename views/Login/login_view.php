@@ -27,9 +27,7 @@
       </div> 
    </div>
 </body>
-
 <?php include("../../includes/login_scripts.php")?>
-
 </html>
 
 

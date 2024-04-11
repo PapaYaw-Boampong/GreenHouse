@@ -1,6 +1,4 @@
 <?php
-
-
 // Include the connection file
 include '../settings/connection.php';
 include '../settings/core.php';
@@ -65,5 +63,4 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
 // Encode the response array as JSON and echo it
 echo json_encode($response);
-
 ?>

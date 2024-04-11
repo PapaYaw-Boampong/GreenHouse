@@ -1,14 +1,11 @@
 <?php
 session_start();
-
 // Include the connection file
 include '../settings/connection.php';
-
 global $connection;
 
 // Initialize response array
 $response = array();
-
 
 // Check if login button was clicked
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -63,3 +60,4 @@ mysqli_close($connection);
 
 // Encode the response array as JSON and echo it
 echo json_encode($response);
+?>

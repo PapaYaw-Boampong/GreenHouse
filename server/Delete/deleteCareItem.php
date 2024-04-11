@@ -1,5 +1,4 @@
 <?php
-// Initialize response array
 $response = array();
 
 // Include the connection file

@@ -528,12 +528,5 @@
   </div>
 
 </body>
-<script>
-
-
-
-</script>
-
 <?php include("../../includes/dash_scripts.php") ?>
-
 </html>

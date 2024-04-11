@@ -1,7 +1,6 @@
 <?php
 // Initialize response array
 $response = array();
-
 // Include the connection file
 include '../settings/connection.php';
 include '../settings/core.php';
@@ -15,7 +14,6 @@ if (!checkLogin()){
     echo $response;
     exit;
 }
-
 
 // Check if the request method is POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

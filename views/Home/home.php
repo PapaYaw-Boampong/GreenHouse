@@ -157,5 +157,4 @@
 
 </body>
 <?php include("../../includes/garden_scripts.php"); ?>
-
 </html>

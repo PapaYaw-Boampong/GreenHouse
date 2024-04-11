@@ -90,7 +90,6 @@
    </div>
 </body>
 <?php include("../../includes/register_scripts.php")?>
-
 </html>
 
 

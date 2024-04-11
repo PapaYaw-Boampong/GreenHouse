@@ -255,5 +255,4 @@
 
 </body>
 <?php include("../../includes/profile_scripts.php"); ?>
-
 </html>
