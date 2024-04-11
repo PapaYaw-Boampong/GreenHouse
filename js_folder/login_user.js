@@ -1,8 +1,57 @@
+
+function validateLoginForm(){
+    // Get form data
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    // Validate form data
+    if (email.trim() === '' || password.trim() === '') {
+        // Show SweetAlert for empty fields
+        swal({
+            title: 'Error!',
+            text: 'Please enter your email and password.',
+            icon: 'error',
+            button: 'OK'
+        });
+        
+        return { isValid: false, message: 'fields Cannot be empty' };
+    }
+
+    // Check email format using regex
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
+        // Show SweetAlert for invalid email format
+        swal({
+            title: 'Error!',
+            text: 'Please enter a valid email address.',
+            icon: 'error',
+            button: 'OK'
+        });
+        return { isValid: false, message: 'Email does not meet criteria' };
+    }
+
+    // Check password format (for example, minimum length of 6 characters) using regex
+    const passwordRegex = /^.{8,}$/;
+    if (!passwordRegex.test(password.trim())) {
+        // Show SweetAlert for invalid password format
+        swal({
+            title: 'Error!',
+            text: 'Please enter a password with at least 6 characters.',
+            icon: 'error',
+            button: 'OK'
+        });
+        return { isValid: false, message: 'Passwords does not meet criteria' };
+    }
+
+    return { isValid: true, message: '' };
+}
+
+
 document.getElementById("login-form").addEventListener("submit", function (event) {
 
     event.preventDefault(); // Prevent form submission
 
-    var validationResult = validateForm();
+    var validationResult = validateLoginForm();
     if(!validationResult.isValid){
         swal({
             title: 'Error',
@@ -76,50 +125,3 @@ document.getElementById("login-form").addEventListener("submit", function (event
             });
         });
 });
-
-function validateLoginForm(){
-    // Get form data
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    // Validate form data
-    if (email.trim() === '' || password.trim() === '') {
-        // Show SweetAlert for empty fields
-        swal({
-            title: 'Error!',
-            text: 'Please enter your email and password.',
-            icon: 'error',
-            button: 'OK'
-        });
-        
-        return { isValid: false, message: 'fields Cannot be empty' };
-    }
-
-    // Check email format using regex
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.trim())) {
-        // Show SweetAlert for invalid email format
-        swal({
-            title: 'Error!',
-            text: 'Please enter a valid email address.',
-            icon: 'error',
-            button: 'OK'
-        });
-        return { isValid: false, message: 'Email does not meet criteria' };
-    }
-
-    // Check password format (for example, minimum length of 6 characters) using regex
-    const passwordRegex = /^.{8,}$/;
-    if (!passwordRegex.test(password.trim())) {
-        // Show SweetAlert for invalid password format
-        swal({
-            title: 'Error!',
-            text: 'Please enter a password with at least 6 characters.',
-            icon: 'error',
-            button: 'OK'
-        });
-        return { isValid: false, message: 'Passwords does not meet criteria' };
-    }
-
-    return { isValid: true, message: '' };
-}
