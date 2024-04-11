@@ -46,13 +46,11 @@ function validateLoginForm(){
     return { isValid: true, message: '' };
 }
 
-
 document.getElementById("login-form").addEventListener("submit", function (event) {
-
     event.preventDefault(); // Prevent form submission
 
     var validationResult = validateLoginForm();
-    if(!validationResult.isValid){
+    if (!validationResult.isValid) {
         swal({
             title: 'Error',
             text: validationResult.message,
@@ -62,66 +60,46 @@ document.getElementById("login-form").addEventListener("submit", function (event
         return;
     }
 
-
-
     // Submit the form data using fetch
     fetch('../../server/Post/login.php', {
         method: 'POST',
         body: new FormData(document.getElementById('login-form'))
-    }).then(response => {
-        if (response.ok) {
-            return response.json();
+    })
+    .then(response => response.json()) // Parse response body as JSON
+    .then(data => {
+        if (data) {
+            // Handle the success status returned by the PHP file
+            if (data.success) {
+                // Set session ID in local storage
+                localStorage.setItem("sessionID", data.sessionID);
+                // Show success message and redirect to home page
+                swal({
+                    title: 'Success!',
+                    text: 'Welcome.',
+                    icon: 'success',
+                    button: 'OK'
+                }).then((value) => {
+                    if (value) {
+                        window.location.href = '../Home/home.php';
+                    }
+                });
+            } else {
+                // Display a SweetAlert for login error
+                throw new Error(data.message || 'Invalid email or password.');
+            }
         } else {
-            // Show SweetAlert for login error
-            swal({
-                title: 'Error!',
-                text: 'Invalid email or password.',
-                icon: 'error',
-                button: 'OK'
-            });
+            // No data received, show generic error
+            throw new Error('No data received.');
         }
     })
-        .then(data => {
-            if (data) {
-                // Handle the success status returned by the PHP file
-                if (data.success) {
-                    sessionID = data.sessionID;
-                    localStorage.setItem("sessionID", sessionID);
-                    // Registration successful, trigger SweetAlert
-                    swal({
-                        title: 'Success!',
-                        text: 'Welcome.',
-                        icon: 'success',
-                        button: 'OK'
-                    }).then((value) => {
-                        if (value) {
-                            window.location.href = '../Home/home.php';
-                        }
-                    });
-
-                } else {
-
-                    // Display a SweetAlert for login error
-                    swal({
-                        title: 'Error!',
-                        text: 'Invalid email or password.',
-                        icon: 'error',
-                        button: 'OK'
-                    });
-                }
-            }else{
-                console.log('no data')
-            }
-
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            // Show SweetAlert for unexpected error
-            swal({
-                title: 'Error!',
-                text: 'An unexpected error occurred. Please try again later.',
-                icon: 'error',
-                button: 'OK'
-            });
+    .catch(error => {
+        console.error('Error:', error);
+        // Show SweetAlert for unexpected error
+        swal({
+            title: 'Error!',
+            text: error.message || 'An unexpected error occurred. Please try again later.',
+            icon: 'error',
+            button: 'OK'
         });
+    });
 });

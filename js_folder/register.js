@@ -56,8 +56,6 @@ function validateForm() {
     return { isValid: true, message: '' };
 }
 
-
-
 document.getElementById("register-form").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent form submission
     var validationResult = validateForm();
@@ -76,8 +74,9 @@ document.getElementById("register-form").addEventListener("submit", function(eve
         method: 'POST',
         body: new FormData(document.getElementById('register-form'))
     })
-    .then(response => {
-        if (response.ok) {
+    .then(response => response.json()) // Parse response body as JSON
+    .then(data => {
+        if (data.success) {
             // Registration successful, trigger SweetAlert
             swal({
                 title: 'Success!',
@@ -91,24 +90,10 @@ document.getElementById("register-form").addEventListener("submit", function(eve
                 }
             });
         } else {
-            // Registration failed, check if email already exists
-            return response.json(); // Parse response body as JSON
-        }
-    })
-    .then(data => {
-        if (data.success === false && data.message === "Email already exists.") {
-            // Handle duplicate email case
+            // Registration failed, handle errors if needed
             swal({
                 title: 'Error!',
-                text: 'Email already exists. Please use a different email address.',
-                icon: 'error',
-                button: 'OK'
-            });
-        } else {
-            // Handle other registration errors
-            swal({
-                title: 'Error!',
-                text: 'Registration failed. Please try again later.',
+                text: data.message || 'Registration failed. Please try again later.',
                 icon: 'error',
                 button: 'OK'
             });
@@ -119,13 +104,11 @@ document.getElementById("register-form").addEventListener("submit", function(eve
         // Handle any unexpected errors if needed
         swal({
             title: 'Error!',
-            text: 'An unexpected server error occurred. Please try again later.',
+            text: 'An unexpected Server error occurred. \n Please try again later.',
             icon: 'error',
             confirmButtonText: 'OK'
         });
     });
 });
-
-
 
 
