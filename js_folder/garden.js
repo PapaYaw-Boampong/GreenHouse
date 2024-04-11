@@ -192,7 +192,7 @@ function plantDash(event) {
     localStorage.setItem("selectedPlantId", plantId);
 
     // Redirect to the dashboard view
-    window.location.href = "../Dashboard/dash.php";
+    window.location.href = "../DashBoard/dash.php";
   } else {
     swal({
       title: "Error",
