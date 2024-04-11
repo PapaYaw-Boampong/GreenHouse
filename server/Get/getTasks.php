@@ -17,7 +17,7 @@ if (!checkLogin()) {
 }
 
 // Check if the request method is GET
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
     // Check if plant ID is provided
     if (isset($_GET['plant_id'])) {
         // Get the plant ID from the request

@@ -19,7 +19,7 @@ if (!checkLogin()) {
 // Get the user ID from the session
 $user_id = $_SESSION['user_id'];
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
     if (!isset($_GET['plant_id'])) {
         $response['success'] = false;

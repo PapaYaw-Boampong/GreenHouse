@@ -19,7 +19,7 @@ if (!checkLogin()) {
     exit();
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
     // Prepare SQL statement to select schedules by user ID
     $sql = "SELECT * FROM schedule";
 

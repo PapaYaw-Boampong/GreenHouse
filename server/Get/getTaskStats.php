@@ -17,7 +17,7 @@ if (!checkLogin()) {
 $response = array();
 
 // Check if the request method is GET
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
     // Perform the SQL query to retrieve the data from the tables
     $sql = "SELECT 
                 t.task_id,

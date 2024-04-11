@@ -20,7 +20,7 @@ $jsonData = json_decode(file_get_contents("php://input"), true);
 
 // Check if JSON data is not empty
 if (!empty($jsonData)) {
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Collect JSON data and store in variables
         $plantName = $jsonData['plantName'];
         $plantSpecies = $jsonData['plantSpecies'];

@@ -23,7 +23,7 @@ if (!checkLogin()) {
 $user_id = $_SESSION['user_id'];
 
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
     if(isset($_GET['plant_id'])){
         // Prepare SQL statement to select plant care information by user ID

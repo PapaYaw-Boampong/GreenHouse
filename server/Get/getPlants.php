@@ -20,7 +20,7 @@ if (!checkLogin()){
 }
 
 // Check if the request method is GET
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
     // Get the user ID from the session
     $user_id = $_SESSION['user_id'];

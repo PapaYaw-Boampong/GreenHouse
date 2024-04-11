@@ -15,7 +15,7 @@ if (!checkLogin()) {
 }
 
 // Check if form data was sent in the request
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Collect form data and store in variables
     $activity_name = $_POST['pc-name'];
     $custom = $_POST['plant_id'];

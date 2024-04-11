@@ -17,7 +17,7 @@ if (!checkLogin()) {
 }
 
 // Check if the request method is POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Perform logout actions here, such as destroying the session
 
     // Close the database connection if it's not already closed
