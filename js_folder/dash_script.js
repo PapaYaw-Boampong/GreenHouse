@@ -834,6 +834,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var logoutButton = document.getElementById('logout-btn');
 
   if (logoutButton) {
+    clickedElement
     // Add click event listener
     logoutButton.addEventListener('click', function () {
       // Send request to logout.php using AJAX
@@ -885,7 +886,6 @@ toggleBtns.forEach(function(btn) {
   btn.addEventListener('click', function() {
     const sidebar = document.querySelector('.sidebar');
     if (sidebar) {
-      console.log(sidebar);
       sidebar.classList.toggle('show');
     }
   });

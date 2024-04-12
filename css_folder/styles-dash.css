@@ -246,6 +246,8 @@ a{
   max-height: 100%;
   overflow: hidden ;
   padding: 0 4px;
+  border-radius: 20px;
+  box-shadow: 0 5px 10px var(--sidebar-active-link);
 }
 
 
@@ -484,7 +486,7 @@ a{
 
   .taskmanagertable{
     height: 60%;
-    margin-top: 200px;
+    margin-top: 220px;
   }
 
   .popup-content{
@@ -520,5 +522,9 @@ a{
     left: 0; /* Display sidebar when hovered over or when any of its contents are hovered over */
   }
   
+
+  #side-logout-btn{
+    padding-bottom: 40px;
+  }
 
 }
