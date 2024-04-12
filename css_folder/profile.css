@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90%;
-
+    max-height: 75%;
+    
 }
 .dataContainer{
     box-shadow: 0 0 15px var(--sidebar-active-link); /* Light green shadow on hover */
@@ -66,7 +66,7 @@
     }
     .dataContainer{
         flex-direction: column;
-        min-width: 90%;
+        min-width: 750%;
         min-height: 75%;
         justify-content: flex-start;
         overflow: scroll;
