@@ -739,7 +739,7 @@ function updateStatus(statusElement, isChecked, toggleid) {
                 // Show success message
                 swal(
                   'Deleted!',
-                  'I loving the momentum ',
+                  'loving the momentum ',
                   'success'
                 ).then(() => {
                   // Refresh the page to reflect the changes
