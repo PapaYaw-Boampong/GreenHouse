@@ -1,3 +1,6 @@
+window.onload = function() {
+    window.location.reload();
+  };
 
 function validateLoginForm(){
     // Get form data
