@@ -527,4 +527,8 @@ a{
     padding-bottom: 40px;
   }
 
+  input{
+    width: 80%;
+  }
+
 }
