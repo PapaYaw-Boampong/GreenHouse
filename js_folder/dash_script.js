@@ -242,7 +242,7 @@ function loadEditInfo(event) {
     });
 }
 
-function loadTaskInfo(event){
+function loadTaskInfo(event) {
   var infoButton = event.target.closest('.info-btn');
   var rowId = infoButton.dataset.taskid;
   // Select the row element with the given rowId
@@ -251,17 +251,17 @@ function loadTaskInfo(event){
 
   // Check if the row exists
   if (row) {
-      // Accessing the text content of cells within the row
-      const statusCellText = row.querySelector('.product-cell.status').textContent;
-      const dateCreatedText = row.querySelector('.product-cell.datecreated').textContent;
-      const dateNextText = row.querySelector('.product-cell.datenext').textContent;
-      const scheduleCellText = row.querySelector('.product-cell.schedule').textContent;
+    // Accessing the text content of cells within the row
+    const statusCellText = row.querySelector('.product-cell.status').textContent;
+    const dateCreatedText = row.querySelector('.product-cell.datecreated').textContent;
+    const dateNextText = row.querySelector('.product-cell.datenext').textContent;
+    const scheduleCellText = row.querySelector('.product-cell.schedule').textContent;
 
-      document.getElementById('status-info').textContent = `Status: ${statusCellText}`;
-      document.getElementById('date-created-info').textContent = `Date Created: ${dateCreatedText}`;
-      document.getElementById('date-next-info').textContent = `Date Next: ${dateNextText}`;
-      document.getElementById('schedule-info').textContent = `Schedule: ${scheduleCellText}`;
-  } 
+    document.getElementById('status-info').textContent = `Status: ${statusCellText}`;
+    document.getElementById('date-created-info').textContent = `Date Created: ${dateCreatedText}`;
+    document.getElementById('date-next-info').textContent = `Date Next: ${dateNextText}`;
+    document.getElementById('schedule-info').textContent = `Schedule: ${scheduleCellText}`;
+  }
 
 
 }
@@ -832,7 +832,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   // Select the logout button
   var logoutButton = document.getElementById('logout-btn');
-  
+
   if (logoutButton) {
     // Add click event listener
     logoutButton.addEventListener('click', function () {
@@ -850,17 +850,14 @@ document.addEventListener("DOMContentLoaded", function () {
             if (value) {
               localStorage.removeItem('sessionID');
               localStorage.removeItem('mode');
-              // Redirect to another page after success if needed
-              window.history.replaceState({}, '', 'http://51.11.183.36/GreenHouse/views/Login/login_view.php');
-
-              // Clear history stack
+              // Replace all history states with the login URL
               var len = window.history.length;
               for (var i = 0; i < len; i++) {
                 window.history.replaceState({}, '', 'http://51.11.183.36/GreenHouse/views/Login/login_view.php');
               }
 
-              // Redirect to login page
-              window.location.href = "http://51.11.183.36/GreenHouse/views/Login/login_view.php";
+              // Redirect to the login page
+              window.location.replace("http://51.11.183.36/GreenHouse/views/Login/login_view.php");
             }
           });
         } else {
@@ -880,9 +877,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const toggleBtns = document.querySelectorAll('.side-toggle');
 
-toggleBtns.forEach(function(btn) {
+toggleBtns.forEach(function (btn) {
 
-  btn.addEventListener('click', function() {
+  btn.addEventListener('click', function () {
     const sidebar = document.querySelector('.sidebar');
     if (sidebar) {
       sidebar.classList.toggle('show');
