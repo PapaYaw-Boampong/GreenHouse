@@ -832,9 +832,8 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   // Select the logout button
   var logoutButton = document.getElementById('logout-btn');
-
+  
   if (logoutButton) {
-    clickedElement
     // Add click event listener
     logoutButton.addEventListener('click', function () {
       // Send request to logout.php using AJAX
