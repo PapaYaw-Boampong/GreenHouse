@@ -6,8 +6,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <link rel="stylesheet" href="../../css_folder/globalcss/globalCss.css">
-  <link rel="stylesheet" href="../../css_folder/styles-dash.css" />
+
   <link rel="stylesheet" href="../../css_folder/pop-up.css" />
+  <link rel="stylesheet" href="../../css_folder/styles-dash.css" />
   <script>
     var mode = localStorage.getItem('mode') || 'light'; // Default to light mode if no mode is stored
     document.documentElement.classList.add(mode);
@@ -97,6 +98,61 @@
           <button class="app-content-headerButton " id="bkGarden">Garden</button>
           <button class="app-content-headerButton open-popup-btn" data-popup-id="editPlant"> Edit Plant</button>
           <button class="app-content-headerButton open-popup-btn" data-popup-id="deletePlant"> Delete Plant</button>
+          <button class=" side-toggle" >
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width='25' height='25' enable-background="new 0 0 24 24" xml:space="preserve">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g>
+                    <g>
+                      <path d="M7.5,19.5c-0.8,0-1.5-0.3-2.1-0.9c-1.2-1.2-1.2-3.1,0-4.2c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4c-0.4,0.4-0.4,1,0,1.4 c0.4,0.4,1,0.4,1.4,0c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4C9,19.2,8.2,19.5,7.5,19.5z"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M20.2,13.3c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4c1.2-1.2,1.2-3.1,0-4.2c-1.1-1.1-3.1-1.1-4.2,0 c-0.4,0.4-1,0.4-1.4,0c-0.4-0.4-0.4-1,0-1.4C14.8,5,16,4.5,17.4,4.5S20,5,20.9,5.9c1.9,1.9,1.9,5.1,0,7.1 C20.7,13.2,20.4,13.3,20.2,13.3z"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M6,16.1c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l8.5-8.5c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-8.5,8.5 C6.6,16,6.3,16.1,6,16.1z"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M1.8,19.4"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M11.7,21.8c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l8.5-8.5c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-8.5,8.5 C12.2,21.7,12,21.8,11.7,21.8z"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M8.9,18.9c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l8.5-8.5c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-8.5,8.5 C9.4,18.9,9.1,18.9,8.9,18.9z"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M4.6,22.2"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M3.2,13.3c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4L13.8,0.3c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4L3.9,13 C3.7,13.2,3.5,13.3,3.2,13.3z"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M7.5,23.5c-1.8,0-3.6-0.7-4.9-2c-1.3-1.3-2-3.1-2-4.9s0.7-3.6,2-4.9c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4 c-0.9,0.9-1.5,2.2-1.5,3.5c0,1.3,0.5,2.6,1.5,3.5c1.9,1.9,5.1,1.9,7.1,0c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4 C11,22.9,9.3,23.5,7.5,23.5z"></path>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -110,7 +166,7 @@
           </div>
         </div>
         <div class="plantInfo" id='infosec2'>
-          <div class="row">
+          <div class="row" id="row1">
             <div class="info-sec" id='sec1'>
               <span>Name :</span>
               <span class="value"> placeholder</span>
@@ -205,7 +261,63 @@
         <div class="headerAction">
           <button class="app-content-headerButton open-popup-btn" data-popup-id="addPlantCare">Add Plant Care</button>
           <button class="app-content-headerButton open-popup-btn" id='create-plt' data-popup-id="createPlantCare">Create Custom Care</button>
+          
         </div>
+        <button class=" side-toggle" >
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width='25' height='25' enable-background="new 0 0 24 24" xml:space="preserve">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g>
+                    <g>
+                      <path d="M7.5,19.5c-0.8,0-1.5-0.3-2.1-0.9c-1.2-1.2-1.2-3.1,0-4.2c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4c-0.4,0.4-0.4,1,0,1.4 c0.4,0.4,1,0.4,1.4,0c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4C9,19.2,8.2,19.5,7.5,19.5z"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M20.2,13.3c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4c1.2-1.2,1.2-3.1,0-4.2c-1.1-1.1-3.1-1.1-4.2,0 c-0.4,0.4-1,0.4-1.4,0c-0.4-0.4-0.4-1,0-1.4C14.8,5,16,4.5,17.4,4.5S20,5,20.9,5.9c1.9,1.9,1.9,5.1,0,7.1 C20.7,13.2,20.4,13.3,20.2,13.3z"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M6,16.1c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l8.5-8.5c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-8.5,8.5 C6.6,16,6.3,16.1,6,16.1z"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M1.8,19.4"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M11.7,21.8c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l8.5-8.5c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-8.5,8.5 C12.2,21.7,12,21.8,11.7,21.8z"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M8.9,18.9c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l8.5-8.5c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-8.5,8.5 C9.4,18.9,9.1,18.9,8.9,18.9z"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M4.6,22.2"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M3.2,13.3c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4L13.8,0.3c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4L3.9,13 C3.7,13.2,3.5,13.3,3.2,13.3z"></path>
+                    </g>
+                  </g>
+                  <g>
+                    <g>
+                      <path d="M7.5,23.5c-1.8,0-3.6-0.7-4.9-2c-1.3-1.3-2-3.1-2-4.9s0.7-3.6,2-4.9c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4 c-0.9,0.9-1.5,2.2-1.5,3.5c0,1.3,0.5,2.6,1.5,3.5c1.9,1.9,5.1,1.9,7.1,0c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4 C11,22.9,9.3,23.5,7.5,23.5z"></path>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </button>
 
       </div>
       <div class="stat-container">
@@ -246,7 +358,63 @@
           </svg>
         </button>
         <button class="app-content-headerButton open-popup-btn" data-popup-id="addTask"> Add Task </button>
+       
       </div>
+      <button class="  side-toggle" >
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width='25' height='25' enable-background="new 0 0 24 24" xml:space="preserve">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <g>
+                <g>
+                  <g>
+                    <path d="M7.5,19.5c-0.8,0-1.5-0.3-2.1-0.9c-1.2-1.2-1.2-3.1,0-4.2c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4c-0.4,0.4-0.4,1,0,1.4 c0.4,0.4,1,0.4,1.4,0c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4C9,19.2,8.2,19.5,7.5,19.5z"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M20.2,13.3c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4c1.2-1.2,1.2-3.1,0-4.2c-1.1-1.1-3.1-1.1-4.2,0 c-0.4,0.4-1,0.4-1.4,0c-0.4-0.4-0.4-1,0-1.4C14.8,5,16,4.5,17.4,4.5S20,5,20.9,5.9c1.9,1.9,1.9,5.1,0,7.1 C20.7,13.2,20.4,13.3,20.2,13.3z"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M6,16.1c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l8.5-8.5c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-8.5,8.5 C6.6,16,6.3,16.1,6,16.1z"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M1.8,19.4"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M11.7,21.8c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l8.5-8.5c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-8.5,8.5 C12.2,21.7,12,21.8,11.7,21.8z"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M8.9,18.9c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l8.5-8.5c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-8.5,8.5 C9.4,18.9,9.1,18.9,8.9,18.9z"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path stroke="#2D2D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M4.6,22.2"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M3.2,13.3c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4L13.8,0.3c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4L3.9,13 C3.7,13.2,3.5,13.3,3.2,13.3z"></path>
+                  </g>
+                </g>
+                <g>
+                  <g>
+                    <path d="M7.5,23.5c-1.8,0-3.6-0.7-4.9-2c-1.3-1.3-2-3.1-2-4.9s0.7-3.6,2-4.9c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4 c-0.9,0.9-1.5,2.2-1.5,3.5c0,1.3,0.5,2.6,1.5,3.5c1.9,1.9,5.1,1.9,7.1,0c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4 C11,22.9,9.3,23.5,7.5,23.5z"></path>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </button>
 
       <div class="taskmanagertable">
         <div class="tableView Tasks" id="tasktable">
@@ -505,6 +673,30 @@
 
     </div>
 
+
+    <div id="Task-info" class=" popup">
+      <div class="popup-title">
+        <label for="close-btn"> Plant Info : </label>
+        <div>
+          <button class="close-btn" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="popup-content">
+        <div id="status-info"></div>
+        <div id="date-created-info"></div>
+        <div id="date-next-info"></div>
+        <div id="schedule-info"></div>
+      </div>
+
+
+    </div>
+
   </div>
 
   <div id="logoutPopup" class="popup">
@@ -529,4 +721,5 @@
 
 </body>
 <?php include("../../includes/dash_scripts.php") ?>
+
 </html>

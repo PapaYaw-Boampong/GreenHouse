@@ -11,8 +11,7 @@
     width: 80%;
 
     display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    justify-content: space-evenly;   
     overflow-y: scroll;
     scroll-behavior: smooth;
     border-radius: 40px;
@@ -54,3 +53,28 @@
     border: solid 2px white;
 }
 
+/* Media Queries for smaller screens */
+@media screen and (max-width: 900px) {
+    .userData{
+        width: 100%;
+       
+    }
+
+    #col-1{
+        margin-left: 0;
+        margin-bottom: 11px;
+    }
+    .dataContainer{
+        flex-direction: column;
+        min-width: 90%;
+        min-height: 75%;
+        justify-content: flex-start;
+        overflow: scroll;
+    }
+    .value{
+        margin-left: 5px;
+    }
+    .headerAction{
+      padding-right: 5px;
+    }
+ }

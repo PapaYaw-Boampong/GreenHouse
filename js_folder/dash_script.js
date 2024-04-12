@@ -61,7 +61,6 @@ if (gardenButton) {
   });
 }
 
-
 // Function to switch display divs
 function togglePages(event) {
   event.preventDefault();
@@ -127,9 +126,7 @@ function setupOpenPopupButtons() {
   if (openPopupButtons) {
     openPopupButtons.forEach(button => {
       button.addEventListener('click', function () {
-        console.log('Button clicked!');
         const popupId = this.dataset.popupId;
-        console.log(this.dataset.popupId);
         if (popupId) {
           showPopup(popupId);
         }
@@ -245,6 +242,30 @@ function loadEditInfo(event) {
     });
 }
 
+function loadTaskInfo(event){
+  var infoButton = event.target.closest('.info-btn');
+  var rowId = infoButton.dataset.taskid;
+  // Select the row element with the given rowId
+  const row = document.querySelector(`.products-row[data-row-id="${rowId}"]`);
+  console.log(rowId);
+
+  // Check if the row exists
+  if (row) {
+      // Accessing the text content of cells within the row
+      const statusCellText = row.querySelector('.product-cell.status').textContent;
+      const dateCreatedText = row.querySelector('.product-cell.datecreated').textContent;
+      const dateNextText = row.querySelector('.product-cell.datenext').textContent;
+      const scheduleCellText = row.querySelector('.product-cell.schedule').textContent;
+
+      document.getElementById('status-info').textContent = `Status: ${statusCellText}`;
+      document.getElementById('date-created-info').textContent = `Date Created: ${dateCreatedText}`;
+      document.getElementById('date-next-info').textContent = `Date Next: ${dateNextText}`;
+      document.getElementById('schedule-info').textContent = `Schedule: ${scheduleCellText}`;
+  } 
+
+
+}
+
 // function to handle task deletions
 function handleTaskDeleteButtonClick(event) {
   // Get the parent button element containing the SVG
@@ -336,6 +357,7 @@ function buildTable2(data, currentDate) {
 
   const tableContents = document.createElement('div')
   tableContents.classList.add('tablecontents');
+  tableContents.id = 'Tasktablecontents';
   tableContainer.appendChild(tableContents);
 
   if (data.length === 0) {
@@ -374,14 +396,14 @@ function buildTable2(data, currentDate) {
     row.innerHTML += `
        
                 <div class="product-cell care" data-careId="${activity_id}">${activity_name}</div>
-                <div class="product-cell status" data-statusId "${status_id}">${status_name}</div>
+                <div class="product-cell status" data-statusId = "${status_id}">${status_name}</div>
                 <div class="product-cell datecreated">${created_at}</div>
                 <div class="product-cell datenext">${nextDueDate}</div>
                 <div class="product-cell schedule" data-scheduleID = "${schedule_id}">${schedule_name}</div>
                 <div class="product-cell action">
                     <div class="action-buttons">
                         <button class="action-btn open-popup-btn edit-btn" data-popup-Id='editTask' data-taskId="${task_id}">
-                            <svg width="25px" height="25px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
+                            <svg width="20px" height="20px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
                                 <path fill="none" fill-rule="evenodd" d="M15.198 3.52a1.612 1.612 0 012.223 2.336L6.346 16.421l-2.854.375 1.17-3.272L15.197 3.521zm3.725-1.322a3.612 3.612 0 00-5.102-.128L3.11 12.238a1 1 0 00-.253.388l-1.8 5.037a1 1 0 001.072 1.328l4.8-.63a1 1 0 00.56-.267L18.8 7.304a3.612 3.612 0 00.122-5.106zM12 17a1 1 0 100 2h6a1 1 0 100-2h-6z" />
                             </svg>
                         </button>
@@ -398,6 +420,9 @@ function buildTable2(data, currentDate) {
                                 </g>
                             </svg>
                         </button>
+                        <button class="action-btn open-popup-btn info-btn" data-popup-Id='Task-info' data-taskId="${task_id}">
+                        <svg  height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32.055 32.055" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M3.968,12.061C1.775,12.061,0,13.835,0,16.027c0,2.192,1.773,3.967,3.968,3.967c2.189,0,3.966-1.772,3.966-3.967 C7.934,13.835,6.157,12.061,3.968,12.061z M16.233,12.061c-2.188,0-3.968,1.773-3.968,3.965c0,2.192,1.778,3.967,3.968,3.967 s3.97-1.772,3.97-3.967C20.201,13.835,18.423,12.061,16.233,12.061z M28.09,12.061c-2.192,0-3.969,1.774-3.969,3.967 c0,2.19,1.774,3.965,3.969,3.965c2.188,0,3.965-1.772,3.965-3.965S30.278,12.061,28.09,12.061z"></path> </g> </g></svg>
+                        </button>
                     </div>
                 </div>
     
@@ -412,6 +437,8 @@ function buildTable2(data, currentDate) {
     const editButton = row.querySelector(`.edit-btn`);
     editButton.addEventListener('click', loadEditInfo);
 
+    const infoButton = row.querySelector(`.info-btn`);
+    infoButton.addEventListener('click', loadTaskInfo);
 
 
   });
@@ -562,8 +589,6 @@ function populateStatContainers(statsInformation) {
       new Date(statInfo.created_at),
       new Date(), parseInt(statInfo.activity_count),
       statInfo.schedule_name);
-    console.log(totalTasks);
-    console.log(parseInt(statInfo.activity_count));
     document.getElementById(`stat-${statInfo.task_id}-num`).textContent = `${count}/${totalTasks} (${completionPercentage.toFixed(2)}%)`;
   });
 }
@@ -848,4 +873,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+});
+
+
+
+
+const toggleBtns = document.querySelectorAll('.side-toggle');
+
+toggleBtns.forEach(function(btn) {
+
+  btn.addEventListener('click', function() {
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar) {
+      console.log(sidebar);
+      sidebar.classList.toggle('show');
+    }
+  });
 });

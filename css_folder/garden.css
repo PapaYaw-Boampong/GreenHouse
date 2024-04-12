@@ -56,3 +56,31 @@
 .popup-region.popup#add-plant.row {
     flex-direction: row;
 }
+
+
+
+
+/* Media Queries for smaller screens */
+@media screen and (max-width: 768px) {
+    .garden{
+        height: 85%;
+        width: 80%;  
+    }
+    .mode-switch{
+        margin-bottom: 25px;
+        margin-left: 5px;
+    }
+    #addplant{
+        width: 85%;
+    }
+    #logoutPopup{
+        width: 60%;
+        height: 20%;
+    }
+    .body{
+        height: 100%;
+    }
+    .gardenContainer{
+        height: 70%;
+    }
+ }

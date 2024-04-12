@@ -124,14 +124,14 @@
                     <div class="col" id="col-3">
                         <div class="section" id="data-sec">
                             <span>
-                                Date of Birth
+                                Date of Birth:
                             </span>
                             <div class="value" id="date"></div>
                         </div>
 
                         <div class="section" id="bio-sec">
                             <span>
-                                Bio
+                                Bio:
                             </span>
                             <div class="value" id="bio"></div>
                         </div>

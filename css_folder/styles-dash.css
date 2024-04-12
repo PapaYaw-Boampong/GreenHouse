@@ -60,11 +60,7 @@
   width: 4px;
 }
 
-@media screen and (max-width: 960px) {
-  .sidebar {
-    display: none;
-  }
-}
+
 
 
 
@@ -186,7 +182,6 @@
 #infosec2{
   margin-left: 30px;
   min-width: 65%;
-  
 }
 
 .row.plantInfo{
@@ -196,8 +191,8 @@
 .value{
   overflow-wrap: break-word; /* Standard syntax */
     word-wrap: break-word; /* Non-standard syntax for older browsers */
-    word-break: break-all; /* Break words at any character */
-    max-width: 500px; /* Set maximum width to prevent excessively long lines */
+    word-break:normal; /* Break words at any character */
+    max-width: 600px; /* Set maximum width to prevent excessively long lines */
 }
 
 #infosec1{
@@ -242,23 +237,7 @@ a{
   color: #fff;/* Your styles here */
 }
 
-@media screen and (max-width: 768px) {
-  .statuses {
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 20px; /* Adjust margin as needed */
-    height: auto; /* Remove fixed height to allow flexibility */
-  }
 
-  .state-container {
-    margin-bottom: 20px; /* Add margin between status tabs */
-  }
-  .app-content-header{
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-  
-}
 
 
 /* Table CSS */
@@ -299,15 +278,6 @@ a{
   align-items: center;
 }
 
-
-
-
-@media screen and (max-width: 650px) {
-  .tableView{
-    display: none;
-  }
- 
-}
 
 
 /* Event Status */
@@ -409,4 +379,145 @@ a{
 
 .tablecontents::-webkit-scrollbar{
   display: none;
+}
+
+.side-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+
+  .statuses {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px; /* Adjust margin as needed */
+    height: auto; /* Remove fixed height to allow flexibility */
+  }
+
+  .state-container {
+    margin-bottom: 20px; /* Add margin between status tabs */
+  }
+  .app-content-header{
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .headerAction{
+    flex-direction: column;
+
+  }
+  .app-content-headerButton{
+   margin-bottom: 3px;
+  }
+
+  .plantData{
+    flex-direction: column;
+    min-height: 45%;
+    margin-bottom: 12px;
+    margin-top: 35px;
+  }
+  .plantInfo{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  #infosec1{
+    max-height: 20%;
+  }
+  #infosec2{
+    min-height: 60%;
+    margin: 0;
+  }
+  .info-sec{
+    margin-left: 0;
+    width: 50%;
+    justify-content: flex-start;
+  }
+  .row{
+    height: 80%;
+  }
+  .row1{
+    height: 18%;
+  }
+  #sec4{
+    justify-content:flex-start ;
+  }
+
+  #infosec1 .info-sec{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 0;
+  }
+  #infosec1 .info-sec span{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .product-cell.nxtdue{
+    display: none;
+  }
+
+  .product-cell.datecreated, .product-cell.datenext, .product-cell.schedule {
+    display: none;
+  }
+
+  .action-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .action-buttons .action-btn{
+    padding-bottom: 10px;
+  }
+
+  #addTask, #editTask, #Task-info, #editPlant, #logoutpopup{
+    min-width: 80%;
+  }
+
+  #Task-info.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;
+  }
+
+  .taskmanagertable{
+    height: 60%;
+    margin-top: 200px;
+  }
+
+  .popup-content{
+    display: flex;
+    flex-direction: column;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; 
+    transition: left 0.4s ease;
+  }
+  
+  .sidebar:hover {
+    left: 0; /* Display sidebar when hovered over */
+  }
+  
+ 
+  .side-toggle {
+    display: block;
+    position: absolute;
+    top: 12.5%;
+    right:5%;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .sidebar.show {
+    left: 0; /* Display sidebar when hovered over or when any of its contents are hovered over */
+  }
+  
+
 }

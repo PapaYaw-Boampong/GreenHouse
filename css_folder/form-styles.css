@@ -35,7 +35,7 @@ body {
 #loginContainer{
    justify-content: flex-start;
    height: 60%;
-   width: 30%;
+   width: 40%;
    align-items: center;
 }
 
@@ -157,3 +157,55 @@ button:hover{
    display: none;
 }
  
+
+/* Media Queries for smaller screens */
+@media screen and (max-width: 768px) {
+   .container {
+      margin-bottom: 40pt;
+      margin-left: 0;
+      height: 100%;
+      padding: 25px;
+
+   }
+
+   #loginContainer {
+      width: 90%;
+   }
+
+   #login {
+      min-width: 95%;
+   }
+
+   #login-form {
+      min-width: 95%;
+      padding: 0;
+   }
+
+   #register-form {
+      min-width: 95%;
+   }
+   .row{
+      flex-direction: column;
+      height: 100%;
+   }
+   .col{
+      margin: 0;
+      padding: 0;
+      height: 100%;
+   }
+   #col-3{
+      padding-left: 0;
+   }
+   #col-1{
+      padding-right: 0;
+      margin: 0;
+   }
+   
+   #register{
+      padding-left: 0;
+   }
+   #register-button{
+      margin-top: 20pt;
+      width: 80%;
+   }
+}
