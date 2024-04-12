@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 75%;
-    
+    height: 90%;
+
 }
 .dataContainer{
     box-shadow: 0 0 15px var(--sidebar-active-link); /* Light green shadow on hover */
@@ -54,7 +54,7 @@
 }
 
 /* Media Queries for smaller screens */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
     .userData{
         width: 100%;
        
@@ -66,8 +66,8 @@
     }
     .dataContainer{
         flex-direction: column;
-        min-width: 750%;
-        min-height: 75%;
+        min-width: 90%;
+        min-height: 70%;
         justify-content: flex-start;
         overflow: scroll;
     }
